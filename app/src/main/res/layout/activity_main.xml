@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/labelUnitConv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Unit Conversion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/labelCelc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="10dp"
+        android:text="Celcius: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelUnitConv" />
+
+    <EditText
+        android:id="@+id/editTextCelc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberSigned"
+        app:layout_constraintLeft_toRightOf="@id/labelCelc"
+        app:layout_constraintTop_toBottomOf="@+id/labelUnitConv" />
+
+    <TextView
+        android:id="@+id/labelFarh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Farhenheight: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCelc" />
+
+    <EditText
+        android:id="@+id/editTextFarh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="32"
+        android:inputType="numberSigned"
+        app:layout_constraintLeft_toRightOf="@id/labelFarh"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCelc" />
+
+    <Button
+        android:id="@+id/btnCtoF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:onClick="onClickCtoF"
+        android:text="@string/ctof"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFarh"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btnFtoC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/ftoc"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btnCtoF"
+        app:layout_constraintStart_toEndOf="@+id/btnCtoF"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFarh"
+        android:onClick="onClickFtoC" />
+
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/reset"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btnFtoC"
+        app:layout_constraintStart_toEndOf="@+id/btnFtoC"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFarh"
+        android:onClick="onClickReset"/>
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Exit App"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFtoC"
+        android:onClick="onClickExit"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
