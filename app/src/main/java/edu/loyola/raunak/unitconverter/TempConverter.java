@@ -5,7 +5,6 @@ import java.text.DecimalFormat;
 /**
  * Model for Temperature unit conversion
  * @author M S Raunak
- * @author Sibren Isaacman
  * @version 1.0 8/29/2019
  */
 public class TempConverter {
@@ -29,11 +28,10 @@ public class TempConverter {
     /**
      * parameterized constructur
      * @param celc the temperature value in Celcius
-     * @param farh the temperature value in Farhenheight
      */
-    public TempConverter (double celc, double farh){
+    public TempConverter (double celc){
         this.tempInC = celc;
-        this.tempInF = farh;
+        this.updateFarhenheight(); // update the tempInFarh using the given temp in Celc
         df = new DecimalFormat ( "#.##");
     }
 
@@ -62,12 +60,14 @@ public class TempConverter {
         this.tempInF = newTempInF;
     }
 
-    /** Update the Celcius value based on the current Farhenheight value */
+    /**
+     * Update the Celcius value based on the current Farhenheight value
+     */
     public void updateCelcius(){
         tempInC = ( (tempInF - 32)/9 ) * 5;
     }
 
-    /** Update the Farhenheight value based on the current Celcius value */
+    /** Update the Farhenheight value based on the current Celcius value*/
     public void updateFarhenheight(){
         tempInF = ( (tempInC / 5.0 ) * 9.0 ) + 32;
     }
@@ -76,6 +76,5 @@ public class TempConverter {
         tempInF = 32.0;
         tempInC = 0.0;
     }
-
 
 }
